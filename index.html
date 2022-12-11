@@ -1,0 +1,74 @@
+---
+title: Apache Fluo - Large-scale Incremental Processing
+html_title_override: true
+---
+<div class="row">
+  <div class="col-sm-8">
+    <div id="welcome-jumbotron" class="jumbotron" style="text-align: center">
+      <h3>Apache Fluo&trade; is a distributed processing system that lets users make incremental updates to large data sets</h3>
+      <a style="margin-right: 20px" href="{{ site.baseurl }}/releases/" class="btn btn-success btn-sm navbar-btn"><i class="fa fa-download fa-lg"></i> Download</a>
+      <a style="margin-right: 20px" href="https://github.com/apache/fluo" target="_blank" class="btn btn-default btn-sm navbar-btn"><i class="fa fa-github fa-lg"></i> GitHub</a>
+      <a href="https://twitter.com/apachefluo" target="_blank" class="btn btn-primary btn-sm navbar-btn"><i class="fa fa-twitter fa-lg"></i> Follow</a>
+    </div>
+    <h3 style="padding-top: 0px">Overview</h3>
+    <p>With Apache Fluo, users can set up workflows that execute cross node transactions when data changes. These workflows enable users to continuously join new data into large existing data sets without reprocessing all data. Apache Fluo is built on <a href="https://accumulo.apache.org/" target="_blank">Apache Accumulo</a>.</p>
+    <p>Take the <a href="{{ site.baseurl }}/tour/">Fluo tour</a> if you are interested in learning more. Feel free to <a  href="{{ site.baseurl }}/contactus/">contact us</a> if you have questions.</p>
+  </div>
+  <div class="col-sm-4">
+    <div class="row">
+      <div class="col-sm-12 panel panel-default">
+        <h3 id="news-header">Latest News</h3>
+        {% assign visible_posts = site.posts | where:"draft",false %}
+        {% for post in visible_posts limit:site.num_home_posts %}
+        <div class="post-header-home">
+          <div class="row">
+            <div class="col-sm-12">
+              <p><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> &nbsp;<small class="text-muted">{{ post.date | date: "%b %Y" }}</small></p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <div id="news-archive-link">
+          View all posts in the <a href="{{ site.baseurl }}/news/">news archive</a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <a class="acevent" data-class="img-responsive center-block" data-format="wide" data-mode="light" data-width="240"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3 style="padding-top:0px;">Major Features</h3>
+
+<div class="row">
+  <div class="col-sm-4">
+    <h4>Reduced Latency</h4>
+    <p>When combining new data with existing data, Fluo offers reduced latency when compared to batch processing frameworks (e.g Spark, MapReduce).</p>
+  </div>
+  <div class="col-sm-4">
+    <h4>Reliable</h4>
+    <p>Incremental updates are implemented using transactions which allow thousands of updates to happen concurrently without corrupting data.</p>
+  </div>
+  <div class="col-sm-4">
+    <h4>Core API</h4>
+    <p>The core <a href="{{ site.baseurl }}/docs/fluo/{{ site.latest_fluo_minor }}/">Fluo API</a> supports simple, cross-node transactional updates using get/set methods.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <h4>Avoid Reprocessing Data</h4>
+    <p>Combine new data with existing data without having to reprocess the entire dataset.</p>
+  </div>
+  <div class="col-sm-4">
+    <h4>General Purpose</h4>
+    <p>Fluo applications consist of a series of observers that execute user code when observed data is updated.</p>
+  </div>
+  <div class="col-sm-4">
+    <h4>Recipes API</h4>
+    <p>The <a href="{{ site.baseurl }}/docs/fluo-recipes/{{ site.latest_recipes_minor }}/">Fluo Recipes API</a> builds on the core API to offer complex transactional updates.</p>
+  </div>
+</div>

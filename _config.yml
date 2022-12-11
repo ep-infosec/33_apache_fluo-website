@@ -1,0 +1,107 @@
+# Site settings
+title: Apache Fluo
+url: "https://fluo.apache.org/" # the base hostname & protocol for your site
+timezone: Etc/UTC
+permalink: pretty
+description: Apache Fluo Website
+
+markdown: kramdown
+
+repository: apache/fluo-website
+
+# Collection names cannot contain periods
+collections:
+  fluo-1-2:
+    output: true
+    permalink: "/docs/fluo/1.2/:path"
+  recipes-1-2:
+    output: true
+    permalink: "/docs/fluo-recipes/1.2/:path"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "_posts/blog"
+      type: "posts"
+    values:
+      layout: "post"
+      category: "blog"
+  -
+    scope:
+      path: "_posts/release"
+      type: "posts"
+    values:
+      layout: "release"
+      category: "release"
+      permalink: "/:categories/:title/"
+      draft: false
+      historical: false
+  - 
+    scope:
+      path: "tour"
+      type: "pages"
+    values:
+      layout: "tour"
+      permalink: "/tour/:basename/"
+  -
+    scope:
+      path: "_fluo-1-2"
+      type: "fluo-1-2"
+    values:
+      layout: "fluo-1.2"
+      title_prefix: "Fluo Documentation - "
+      version: "1.2.0"
+      minor_release: "1.2"
+      docs_base: "/docs/fluo/1.2"
+      javadoc_base: "https://static.javadoc.io/org.apache.fluo/fluo-api/1.2.0"
+      github_base: "https://github.com/apache/fluo/blob/main"
+      github_yarn: "https://github.com/apache/fluo-yarn/blob/main"
+  -
+    scope:
+      path: "_recipes-1-2"
+      type: "recipes-1-2"
+    values:
+      layout: "recipes-1.2"
+      title_prefix: "Fluo Recipes Documentation - "
+      version: "1.2.0"
+      minor_release: "1.2"
+      docs_base: "/docs/fluo-recipes/1.2"
+      github_base: "https://github.com/apache/fluo-recipes/blob/main"
+      javadoc_fluo: "https://static.javadoc.io/org.apache.fluo/fluo-api/1.1.0-incubating"
+      javadoc_core: "https://static.javadoc.io/org.apache.fluo/fluo-recipes-core/1.1.0-incubating"
+      javadoc_accumulo: "https://static.javadoc.io/org.apache.fluo/fluo-recipes-accumulo/1.1.0-incubating"
+
+# Number of posts displayed on the home page.
+num_home_posts: 5
+
+# Color scheme based on http://flatuicolors.com/.
+color: default
+
+# Fluo specific settings
+latest_fluo_release: "1.2.0"
+latest_fluo_minor: "1.2"
+latest_recipes_release: "1.2.0"
+latest_recipes_minor: "1.2"
+latest_fluo_yarn_release: "1.0.0"
+
+# Sets links to external API
+api_base: "https://javadoc.io/doc/org.apache.fluo"
+api_static: "https://static.javadoc.io/org.apache.fluo"
+fluo_api_base: "https://javadoc.io/doc/org.apache.fluo/fluo-api"
+fluo_api_static: "https://javadoc.io/page/org.apache.fluo/fluo-api"
+fluo_recipes_core_static: "https://javadoc.io/page/org.apache.fluo/fluo-recipes-core"
+fluo_recipes_spark_static: "https://javadoc.io/page/org.apache.fluo/fluo-recipes-spark"
+old_api_base: "https://javadoc.io/doc/io.fluo"
+old_api_static: "https://static.javadoc.io/io.fluo"
+
+whitelist: [jekyll-redirect-from]
+plugins: [jekyll-redirect-from]
+
+#Social
+twitter_username: "ApacheFluo"
